@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rhyno Rentals - Rhyno Wheels Pvt. Ltd.</title>
+    <link rel="stylesheet" href="rentals.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <a href="home.html"><img class="logo" src="Rhyno Logo cropped.png" alt="Rhyno Wheels Logo"></a>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Products <i class="fa fa-caret-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="product1.html">SE03 Lite</a>
+                            <a href="product2.html">SE03</a>
+                            <a href="product3.html">SE03 Max</a>
+                            <a href="compare.html">Comparison</a>
+                        </div>
+                    </li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="social-icons">
+        <a href="https://wa.me/919023987528" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/rynoauto/?hl=en" target="_blank"><i
+                class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/company/rhyno-wheels/" target="_blank"><i
+                class="fa-brands fa-linkedin-in"></i></a>
+    </div>
+
+    <div class="content-container">
+        <section class="rental-info">
+            <h1>Rhyno Rentals</h1>
+            <p>Explore the roars of Rhyno at your own pace with our rental options! Test the waters with our flexible rental model, available for a week or a month, allowing you to experience the Rhyno first hand before committing. Simply visit our authorized dealerships to unlock this opportunity.</p>
+            <p>Additionally, we're redefining campus commuting with our rental fleet tailored for college students. Navigate your daily commute effortlessly by renting Rhyno vehicles on an hourly basis through our user-friendly mobile app. Embrace the freedom to ride and explore a new dimension in sustainable and convenient transportation.</p>
+            <div class="app-buttons">
+                <a href="https://play.google.com/store" target="_blank" class="app-button android"><i class="fab fa-android"></i> Android</a>
+                <a href="https://www.apple.com/app-store/" target="_blank" class="app-button apple"><i class="fab fa-apple"></i> Apple</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Policies</h4>
+                <ul>
+                    <li><a href="#privacy-policy">Privacy Policy</a></li>
+                    <li><a href="#refund-policy">Refund Policy</a></li>
+                    <li><a href="#website-policy">Website Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="rentals.html">Rentals</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-icons-footer">
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 0) {
+                    header.style.backgroundColor = '#333'; 
+                } else {
+                    header.style.backgroundColor = '#414141'; 
+                }
+            });
+
+            const scrollLinks = document.querySelectorAll('a[href^="#"]');
+            scrollLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        const offsetTop = targetElement.offsetTop;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

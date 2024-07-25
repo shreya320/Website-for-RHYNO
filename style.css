@@ -1,0 +1,402 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
+    background-color:#bbbaba /* Prevents horizontal sliding */
+}
+
+.main {
+    margin: 0;
+    padding: 0;
+    position: relative; /* Ensures positioning context for hr */
+}
+
+.cover {
+    width: 100%;
+    height: 100vh; /* Adjusts the height of the image */
+    object-fit: cover; /* Ensures the image covers the set height */
+    display: block; /* Removes default inline spacing */
+}
+
+.header {
+    background-color: #414141;
+    z-index: 200;
+    height: 4rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.logo {
+    position: absolute;
+    left: 4rem;
+    height: 4rem;
+    width: auto;
+    z-index: 10000000;
+    transition: transform 0.3s ease; /* Smooth transition for scaling effect */
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.social-icons {
+    font-size: 1.5rem;
+    flex-direction: column;
+    position: fixed; /* Fixes the element's position relative to the viewport */
+    right: 1rem; /* Aligns it to the right side */
+    top: 50%; /* Centers it vertically */
+    transform: translateY(-50%); /* Ensures it is centered exactly */
+    z-index: 2000;
+    display: flex; /* Ensures the flex direction takes effect */
+    gap: 1.5rem; /* Adds some space between the icons */
+}
+
+.social-icons a {
+    color: #F9ED32;
+    transition: transform 0.3s ease; /* Smooth transition for scaling effect */
+}
+
+.social-icons a:hover {
+    transform: scale(1.2); /* Scale up the icon on hover */
+}
+
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    right: 3rem;
+    top: 0.35rem;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap:3rem;
+
+}
+
+.navbar ul li {
+    position: relative;
+}
+
+.navbar ul li a {
+    display: block;
+    color: #F9ED32;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.navbar ul li a:hover {
+    background-color: #575757;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown-content a {
+    color: #F9ED32;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.footer-container {
+    background-color: #414141;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 12rem;
+    font-size: 1rem;
+}
+
+.footer-section {
+    flex: 1;
+    margin-right: 12rem;
+}
+
+.footer-section h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding-left: 2rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: #F9ED32;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: none;
+    background-color: #333;
+    padding: 0.5rem 1rem;
+}
+
+.social-icons-footer {
+    display: flex;
+    gap: 2rem;
+    padding-left:2.5rem;
+}
+
+.social-icons-footer a {
+    color: #F9ED32;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.social-icons-footer a:hover {
+    transform:scale(1.2);
+}
+
+.prebook-button {
+    position: fixed;
+    top: 5rem;
+    right: 3rem;
+    background-color: #F9ED32;
+    color: black;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    z-index: 3000;
+    transition: background-color 0.3s, transform 0.3s;
+    font-family: 'Poppins';
+    text-decoration: none;
+    animation: pop 1.5s infinite;
+
+}
+
+.prebook-button:hover {
+    background-color: #ddd;
+    transform: scale(1.1);
+}
+
+.prebook-button a{
+    text-decoration: none;
+}
+
+@keyframes pop {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+
+.hero-text {
+    width: 35rem;
+    position: absolute;
+    top: 7rem;
+    left: 5rem;
+    font-family: "Poppins", sans-serif;
+    color: #ddd;
+    margin-top: 2rem;
+    text-align: center;
+    word-spacing: 0.7rem;
+    letter-spacing: 0.1rem;
+    font-weight: bolder;
+}
+
+.typing {
+    animation: typing-animation 0.1s steps(1, end) forwards;
+}
+
+@keyframes typing-animation {
+    from {
+        width: 0;
+    }
+}
+
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#static-text-part1 {
+    font-size: 2.3rem;
+    line-height: 4.3rem;
+    animation: slide-in-left 1s ease-in-out both;
+}
+
+#static-text-part2 {
+    font-size: 4.1rem;
+    line-height: 5.5rem;
+    animation: slide-in-right 1s ease-in-out both;
+}
+
+#dynamic-text {
+    font-size: 4rem;
+    color: #F9ED32;
+    animation: pulse 1s infinite;
+}
+
+@keyframes slide-in-left {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-right {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.carousel-container {
+    margin-top: 20px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    color: #333;
+    background-color: #fff;
+    border-radius: 10px;
+    font-family: 'Poppins';
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-cards {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.product-card {
+    width: 300px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    width: 100%;
+    height: 50%;
+    border-radius: 8px;
+}
+
+.product-card h3 {
+    margin: 10px 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.product-card p {
+    margin: 10px 0;
+    color: #666;
+    font-family: 'Calibri';
+}
+
+.checkout-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f9ed32;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    bottom: 1rem;
+}
+
+.checkout-button:hover {
+    background-color: #d4c60f;
+}
+
+/* Carousel Controls */
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.carousel-control:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-control.prev {
+    left: 20px;
+}
+
+.carousel-control.next {
+    right: 20px;
+}
